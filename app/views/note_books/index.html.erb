@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Your NoteBooks</h1>
+<%= link_to 'New Note book', new_note_book_path %>
 <hr>
 <% @note_books.each do |note_book| %>
   <div class="notebook">
@@ -13,5 +14,4 @@
   </div>
 <% end %>
 <br>
-
-<%= link_to 'New Note book', new_note_book_path %>
+<%= link_to 'Home', root_path %>
