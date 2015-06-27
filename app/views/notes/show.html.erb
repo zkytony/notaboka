@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @note.content %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @note.importance %>
+</p>
+
+<%= link_to 'Notebook', note_book_path(@note_book) %>
+<%= link_to 'Edit', edit_note_book_note_path(@note_book, @note) %> |
+<%= link_to 'Back', note_books_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1><%= @note_book.title %></h1>
+</p>
+
+<p>
+  <h3>About: <%= @note_book.about %></h3>
+</p>
+
+<%= link_to 'Add note', new_note_book_note_path(@note_book) %>
+
+<p>
+  <strong>Notes in this Notebook: </strong><br>
+  <hr>
+  <% @note_book.notes.each do |note| %>
+    <pre style="white-space: pre-wrap;"><%= note.content %></pre>
+    <b>Importance: <%= note.importance%></b><br />
+    <hr>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_note_book_path(@note_book) %> |
+<%= link_to 'Back', note_books_path %>
