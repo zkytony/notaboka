@@ -1,3 +1,9 @@
 <h1>Welcome to Notaboka</h1>
 <%= link_to 'All Notebooks', note_books_path %>
+<h3>Your notebooks</h3>
+<ul>
+  <% @note_books.each do |note_book| %>
+    <li><%= link_to note_book.title, note_book_path(note_book) %></li>
+  <% end %>
+</ul>
 
