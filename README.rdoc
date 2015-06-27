@@ -1,5 +1,0 @@
-notaboka
-
-Very simple rails app built with MongoDB, using Mongoid. You just create a notebook, and can add notes into it.
-
-Just a start with Rails + MongoDB.
