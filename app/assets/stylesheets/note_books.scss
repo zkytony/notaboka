@@ -26,15 +26,13 @@
 
     .operation-buttons {
 	width:100%;
-	margin:auto;
-	position:absolute;
-	left:0px;
-	bottom:0px;
+	height:20px;
 
 	a {
+	    width:10%;
 	    float:left;
 	    font-size:15px;
-	    width:33%;
+	    padding:2px;
 	    text-align:center;
 	}
     }
@@ -46,5 +44,9 @@
 	color: $regular-yellow;
 	border: 1px solid $regular-yellow;
 	background-color:$grey-blue;
+    }
+
+    .note-about-margin {
+	margin-bottom:12px;
     }
 }
