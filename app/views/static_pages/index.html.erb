@@ -13,6 +13,9 @@
 	<div class="notebook-list-item left">
 	  <b><%= link_to note_book.title, note_book_path(note_book) %></b>
 	  <p><%= note_book.about %></p>
+	  <div class="note-count lower-right">
+	    <b>#<%= note_book.notes.count %></b>
+	  </div>
 	</div>
       <% end %>
   </div>
