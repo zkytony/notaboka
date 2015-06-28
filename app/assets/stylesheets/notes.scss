@@ -1,6 +1,6 @@
 .note {
     width: 320px;
-    height:270px;
+    max-height:270px;
     float:left;
     background-color: $soft-blue;
     margin: 10px;
@@ -9,7 +9,9 @@
 
     .note-content {
 	padding: 7px;
-	height: 230px;
+	min-height: 80px;
+	max-height: 230px;
+	margin-bottom: 20px;
 	overflow-y: auto;
 	
 	pre {
