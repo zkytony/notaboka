@@ -6,7 +6,7 @@
 <% @note_books.each do |note_book| %>
   <div class="notebook">
     <h3><%= link_to note_book.title, note_book %></h3>
-    <pre style="white-space: pre-wrap;">About: <%= note_book.about %></pre>
+    <pre>About: <%= note_book.about %></pre>
     <%= link_to 'Edit', edit_note_book_path(note_book) %>
     <%= link_to 'Destroy', note_book, method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to 'Add note', new_note_book_note_path(note_book)%>

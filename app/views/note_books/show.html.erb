@@ -14,7 +14,7 @@
   <strong>Notes in this Notebook: </strong><br>
   <hr>
   <% @note_book.notes.sort_by{ |note| note.importance }.reverse.each do |note| %>
-    <pre style="white-space: pre-wrap;"><%= note.content %></pre>
+    <pre><%= note.content %></pre>
     <b>Importance: <%= note.importance%></b><br />
     <hr>
   <% end %>
