@@ -9,12 +9,15 @@
 <% @note_books.each do |note_book| %>
   <div class="notebook-list-item left">
     <b><%= link_to note_book.title, note_book_path(note_book) %></b>
-    <p><%= note_book.about %></p>
+    <p class="note-about-margin"><%= note_book.about %></p>
+    <div class="note-count lower-right">
+      <b>#<%= note_book.notes.count %></b>
+    </div>
 
-    <div class="operation-buttons">
-      <%= link_to 'Edit', edit_note_book_path(note_book), class: "dark-theme-bg" %>
-      <%= link_to 'Destroy', note_book, method: :delete, data: { confirm: 'Are you sure?' }, class: "dark-theme-bg" %>
-      <%= link_to 'Add note', new_note_book_note_path(note_book), class: "logo-color-bg" %>
+    <div class="operation-buttons lower-left">
+      <%= link_to '', edit_note_book_path(note_book), class: "icon-edit dark-theme-bg" %>
+      <%= link_to '', note_book, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-destroy dark-theme-bg" %>
+      <%= link_to '', new_note_book_note_path(note_book), class: "icon-add logo-color-bg" %>
     </div>
   </div>
 <% end %>

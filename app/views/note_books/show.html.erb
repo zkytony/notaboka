@@ -20,10 +20,11 @@
       </div>
       <div class="lower-left">
 	<b>Importance: <%= note.importance%></b>
-	<%= link_to 'Edit', edit_note_book_note_path(@note_book, note), class: "sm-button skin-yellow-bg" %>
-	<%= link_to 'Destroy', note_book_note_path(@note_book, note), method: :delete, data: { confirm: 'Are you sure?' }, class: "sm-button skin-yellow-bg"%>
       </div>
-
+      <div class="lower-right">
+	<%= link_to '', edit_note_book_note_path(@note_book, note), class: "icon-edit sm-button skin-yellow-bg" %>
+	<%= link_to '', note_book_note_path(@note_book, note), method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-destroy sm-button skin-yellow-bg"%>
+      </div>
     </div>
   <% end %>
 </div>
