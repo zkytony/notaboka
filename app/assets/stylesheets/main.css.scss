@@ -5,10 +5,12 @@ $grey-blue: #336699;
 $regular-blue: #3333FF;
 $soft-blue: #CCCCFF;
 $earth-yellow: #CC9900;
+$regular-yellow: #FFFF00;
 $skin-yellow: #FFFFCC;
 $pink-red: #FF3333;
 $wine-red: #800000;
 $soft-green: #66FF99;
+$light-brown: #996633;
 $white: #FFFFFF;
 
 @mixin shadow-outer($color, $horizontal_offset: 3px, $vertical_offset: 3px, $blur_radius: 5px, $spread_radius: 6px) {
@@ -182,8 +184,15 @@ nav {
     bottom:0px;
 }
 
+.lower-right {
+    position:absolute;
+    right:0px;
+    bottom:0px;
+}
+
 .notice-msg {
     margin-top:3px;
     font-family: "Tahoma", sans-serif;
     background-color: $soft-green;
 }
+
