@@ -1,20 +1,6 @@
 class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
-  # GET /notes
-  # GET /notes.json
-  def index
-    @notes = Note.all
-    @note_book = NoteBook.find(params[:note_book_id])
-  end
-
-  # GET /notes/1
-  # GET /notes/1.json
-  def show
-    @note = Note.find(params[:id])
-    @note_book = NoteBook.find(params[:note_book_id])
-  end
-
   # GET /notes/new
   def new
     @note = Note.new
@@ -59,7 +45,7 @@ class NotesController < ApplicationController
     @note_book = NoteBook.find(params[:note_book_id])
     @note.destroy
     respond_to do |format|
-      format.html { redirect_to note_book_notes_url(@note_book), notice: 'Note was successfully destroyed.' }
+      format.html { redirect_to note_book_url(@note_book), notice: 'Note was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

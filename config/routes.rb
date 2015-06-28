@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'static_pages/index'
 
   resources :note_books do
-    resources :notes
+    get '/notes' => 'note_books#show'
+    resources :notes, only: [:create, :new, :edit, :update, :destroy]
   end
   
   # The priority is based upon order of creation: first created -> highest priority.
