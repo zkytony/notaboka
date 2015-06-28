@@ -1,5 +1,7 @@
 .notebook-list-item {
     width: 220px;
+    min-height:125px;
+    pisition:relative;
     background-color: darken($theme-color, 30%);
     margin:10px;
     
@@ -19,21 +21,21 @@
     p {
 	font-size:17px;
 	padding:10px;
+	margin-bottom:15px;
     }
 
     .operation-buttons {
-	width:95%;
+	width:100%;
 	margin:auto;
+	position:absolute;
+	left:0px;
+	bottom:0px;
 
 	a {
 	    float:left;
 	    font-size:15px;
-	    width:65px;
-	    margin:2px;
+	    width:33%;
 	    text-align:center;
 	}
-        
-
     }
-    
 }
