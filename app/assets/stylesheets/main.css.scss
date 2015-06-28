@@ -1,3 +1,189 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$theme-color: #F2F2F2;
+$logo-color: #FF3300;
+$bright-blue: #3300FF;
+$grey-blue: #336699;
+$regular-blue: #3333FF;
+$soft-blue: #CCCCFF;
+$earth-yellow: #CC9900;
+$skin-yellow: #FFFFCC;
+$pink-red: #FF3333;
+$wine-red: #800000;
+$soft-green: #66FF99;
+$white: #FFFFFF;
+
+@mixin shadow-outer($color, $horizontal_offset: 3px, $vertical_offset: 3px, $blur_radius: 5px, $spread_radius: 6px) {
+  -moz-box-shadow:    $horizontal_offset $vertical_offset $blur_radius $spread_radius;
+  -webkit-box-shadow: $horizontal_offset $vertical_offset $blur_radius $spread_radius;
+  box-shadow:         $horizontal_offset $vertical_offset $blur_radius $spread_radius;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: $theme-color;
+}
+
+h1 {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+header {
+    h1 {
+	padding:10px;
+	i {
+	    font-weight:200;
+	    font-size:25px;
+	}
+    }
+}
+
+nav {
+    background-color: lighten($theme-color, 5%);
+    height:45px;
+}
+
+.left {
+    position:relative;
+    float:left;
+}
+
+.right {
+    position:relative;
+    float:right;
+}
+
+.center {
+    margin:auto;
+}
+
+.nav-logo {
+    float:left;
+    a {
+	padding:10px;
+	font-family: "Tahoma", sans-serif;
+	font-size:25px;
+	font-weight:700;
+	background-color: $logo-color;
+	color: lighten($theme-color, 5%);
+	&:hover {
+	    color: $logo-color;
+	    background-color: darken($theme-color, 5%);
+	}
+    }
+}
+
+.nav-item {
+    margin-top:10px;
+    
+    ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+    }
+
+    li {
+	display: inline;
+	a {
+	    padding:10px;
+	    font-size:25px;
+	    color: $bright-blue;
+	    &:hover {
+		background-color: darken($theme-color, 15%);
+	    }
+	}
+    }
+}
+
+.container {
+    width:90%;
+    margin:auto;
+}
+
+.huge-quote {
+    font-family: 'Times New Roman', serif;
+    font-size: 40px;
+}
+
+.huge-quote-author {
+    font-family: 'Times New Roman', serif;
+    font-size: 25px;
+    margin-top:10px;
+}
+
+.top-room {
+    margin-top: 20px;
+}
+
+.logo-color-bg {
+    background-color: $logo-color;
+
+    &:hover {
+	background-color: lighten($theme-color, 10%);
+	color: $logo-color;
+    }
+}
+
+.dark-theme-bg {
+    background-color: darken($theme-color, 35%);
+}
+
+.grey-blue-bg {
+    background-color:$grey-blue;
+
+    &:hover {
+	background-color: darken($grey-blue, 10%);
+    }
+}
+
+.skin-yellow-bg {
+    background-color:$skin-yellow;
+    color: $grey-blue;
+
+    &:hover {
+	color:$skin-yellow;
+	background-color: $grey-blue;    
+    }
+}
+
+.button {
+    width:130px;
+    height:60px;
+    color: $skin-yellow;
+    padding:5px;
+}
+
+.sm-button {
+    width: 80px;
+    height:45px;
+    padding:1px;
+    font-size:13px;
+}
+
+.button-group {
+    margin-left:15px;
+    margin-bottom:10px;
+}
+
+.lower-left {
+    position: absolute;
+    left:0px;
+    bottom:0px;
+}
+
+.notice-msg {
+    margin-top:3px;
+    font-family: "Tahoma", sans-serif;
+    background-color: $soft-green;
+}

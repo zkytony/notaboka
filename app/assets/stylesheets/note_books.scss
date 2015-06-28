@@ -1,3 +1,39 @@
-// Place all the styles related to the NoteBooks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.notebook-list-item {
+    width: 220px;
+    background-color: darken($theme-color, 30%);
+    margin:10px;
+    
+    a {
+	width:150px;
+	margin:auto;
+	display: block;
+	font-size: 20px;
+	color: $white;
+	padding-top:5px;
+	
+	&:hover {
+	    color: $logo-color;
+	}
+    }
+
+    p {
+	font-size:17px;
+	padding:10px;
+    }
+
+    .operation-buttons {
+	width:95%;
+	margin:auto;
+
+	a {
+	    float:left;
+	    font-size:15px;
+	    width:65px;
+	    margin:2px;
+	    text-align:center;
+	}
+        
+
+    }
+    
+}
