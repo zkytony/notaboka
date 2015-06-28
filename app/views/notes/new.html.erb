@@ -4,9 +4,9 @@
 </header>
 
 <div class="button-group">
-  <%= link_to 'Back', note_book_notes_path(@note_book), class: "button grey-blue-bg"%>
+  <%= link_to 'Back', note_book_path(@note_book), class: "button grey-blue-bg"%>
 </div>
 
 <div class="form center note-form">
-  <%= render partial: 'form' %>
+  <%= render partial: 'form', locals: {url: note_book_notes_path(@note_book)} %>
 </div>

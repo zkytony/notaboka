@@ -1,7 +1,11 @@
 <% provide(:title, "Edit Note") %>
-<h1>Editing Note</h1>
+<header>
+  <h1>Editing Note</h1>
+</header>
+<div class="button-group">
+  <%= link_to 'Back', note_book_path(@note_book), class: "button grey-blue-bg"%>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @note %> |
-<%= link_to 'Back', note_book_notes_path %>
+<div class="form center">
+  <%= render partial: 'form', locals: {url: note_book_note_path(@note_book, @note)} %>
+</div>
