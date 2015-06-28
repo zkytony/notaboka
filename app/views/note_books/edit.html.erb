@@ -1,6 +1,13 @@
-<h1>Editing Note Book</h1>
+<% provide(:title, "Edit Notebook") %>
+<header>
+  <h1>Editing Note Book</h1>
+  <div class="button-group">
+    <%= link_to 'Show', @note_book, class: "button grey-blue-bg"%>
+    <%= link_to 'Back', note_books_path, class: "button grey-blue-bg"%>
+  </div>
 
-<%= render 'form' %>
+</header>
 
-<%= link_to 'Show', @note_book %> |
-<%= link_to 'Back', note_books_path %>
+<div class="form center">
+  <%= render 'form' %>
+</div>

@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Notaboka</title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= render partial: "layouts/fonts_include" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <head>
+    <nav>
+      <div class="nav-item nav-logo">
+	<%= link_to 'Notaboka', root_path%>
+      </div>
+      <div class="nav-links left nav-item">
+	<ul>
+	  <li><%= link_to 'About', '#' %></li>
+	  <li><%= link_to 'All Notebooks', note_books_path %></li>
+	</ul>
+      </div>
+      <div class="nav-links right nav-item">
+	<ul>
+	  <li><%= link_to 'Create Notebook', new_note_book_path %></li>
+	</ul>
+      </div>
+    </nav>
+  </head>
+  
+  <%= yield %>
 
 </body>
 </html>

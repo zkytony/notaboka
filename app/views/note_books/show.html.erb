@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "View Notebook") %>
+<p id="notice" class="notice-msg"><%= notice %></p>
 
-<p>
-  <h1><%= @note_book.title %></h1>
-</p>
+<header>
+  <h1><%= @note_book.title %><i>:<%= @note_book.about %><i></h1>
+</header>
 
-<p>
-  <h3>About: <%= @note_book.about %></h3>
-</p>
+<div class="button-group">
+  <%= link_to 'Edit', edit_note_book_path(@note_book), class: "button grey-blue-bg"%>
+  <%= link_to 'Back', note_books_path, class: "button grey-blue-bg" %>
+  <%= link_to 'Add note', new_note_book_note_path(@note_book), class: "button logo-color-bg" %>
+</div>
 
-<%= link_to 'Add note', new_note_book_note_path(@note_book) %>
+<div class="container">
 
-<p>
-  <strong>Notes in this Notebook: </strong><br>
-  <hr>
   <% @note_book.notes.sort_by{ |note| note.importance }.reverse.each do |note| %>
-    <pre><%= note.content %></pre>
-    <b>Importance: <%= note.importance%></b><br />
-    <hr>
-  <% end %>
-</p>
+    <div class="note">
+      <div class="note-content">
+	<pre><%= note.content %></pre>
+      </div>
+      <div class="lower-left">
+	<b>Importance: <%= note.importance%></b>
+	<%= link_to 'Edit', edit_note_book_note_path(@note_book, note), class: "sm-button skin-yellow-bg" %>
+	<%= link_to 'Destroy', note_book_note_path(@note_book, note), method: :delete, data: { confirm: 'Are you sure?' }, class: "sm-button skin-yellow-bg"%>
+      </div>
 
-<%= link_to 'Edit', edit_note_book_path(@note_book) %> |
-<%= link_to 'Back', note_books_path %>
+    </div>
+  <% end %>
+</div>

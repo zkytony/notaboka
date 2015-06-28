@@ -1,9 +1,19 @@
-<h1>Welcome to Notaboka</h1>
-<%= link_to 'All Notebooks', note_books_path %>
-<h3>Your notebooks</h3>
-<ul>
-  <% @note_books.each do |note_book| %>
-    <li><%= link_to note_book.title, note_book_path(note_book) %></li>
-  <% end %>
-</ul>
+<div class="container">
 
+  <header>
+    <q class="huge-quote">
+      Very often, gleams of light come in a few minutes' sleeplessness, in a second
+      perhaps; you must fix them. To entrust them to the relaxed brain is like writing on water; there is every chance that on the morrow there will be no slightest trace left of any happening.
+    </q>
+    <i class="huge-quote-author">By Antonin Sertillanges</i>
+  </header>
+
+  <div class="container top-room">
+      <% @note_books.each do |note_book| %>
+	<div class="notebook-list-item left">
+	  <b><%= link_to note_book.title, note_book_path(note_book) %></b>
+	  <p><%= note_book.about %></p>
+	</div>
+      <% end %>
+  </div>
+</div>

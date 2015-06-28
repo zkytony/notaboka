@@ -1,17 +1,23 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "NoteBooks") %>
+<p id="notice" class="notice-msg"><%= notice %></p>
 
-<h1>Your NoteBooks</h1>
-<%= link_to 'New Note book', new_note_book_path %>
+<header>
+  <h1>Your NoteBooks</h1>
+</header>
 <hr>
 <% @note_books.each do |note_book| %>
-  <div class="notebook">
-    <h3><%= link_to note_book.title, note_book %></h3>
-    <pre>About: <%= note_book.about %></pre>
-    <%= link_to 'Edit', edit_note_book_path(note_book) %>
-    <%= link_to 'Destroy', note_book, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to 'Add note', new_note_book_note_path(note_book)%>
+
+  <div class="notebook-list-item left">
+    <b><%= link_to note_book.title, note_book_path(note_book) %></b>
+    <p><%= note_book.about %></p>
+
+    <div class="operation-buttons">
+      <%= link_to 'Edit', edit_note_book_path(note_book), class: "dark-theme-bg" %>
+      <%= link_to 'Destroy', note_book, method: :delete, data: { confirm: 'Are you sure?' }, class: "dark-theme-bg" %>
+      <%= link_to 'Add note', new_note_book_note_path(note_book), class: "logo-color-bg" %>
+    </div>
     <hr>
   </div>
+
 <% end %>
 <br>
-<%= link_to 'Home', root_path %>

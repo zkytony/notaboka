@@ -1,6 +1,6 @@
 <%= form_for(@note_book) do |f| %>
   <% if @note_book.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="error-msg">
       <h2><%= pluralize(@note_book.errors.count, "error") %> prohibited this note_book from being saved:</h2>
 
       <ul>
@@ -20,6 +20,6 @@
     <%= f.text_field :about %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit"%>
   </div>
 <% end %>
